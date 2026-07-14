@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0d56689d-6eef-4453-a1b9-fec9175100aa" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/Chottullink Deferred Test.apk" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/config/ConfigReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/constants/FrameworkConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/driver/DriverFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pages/BasePage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pages/ChromePage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pages/DeferredLinkPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/server/AppiumServiceManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/utils/CommandExecutor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/utils/DeviceManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/utils/Downloader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/utils/WaitUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/utils/installer/AndroidInstaller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/utils/installer/AppInstaller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/utils/installer/IOSInstaller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/utils/installer/InstallerFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/config.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/tests/DeferredLinkTest.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "ankitaloni369"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/JosephKarl369/ChottulinkClient-DeferredLink.git",
+    "accountId": "47718ec1-3ff5-4cad-a054-664b930c7296"
+  }
+}]]></component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0000000000005145" />
+      <entry key="S2" value="1.0009130974995666" />
+      <entry key="S5" value="1.0903768966717178" />
+      <entry key="S10" value="1.4920328697188554" />
+      <entry key="S30" value="2.6215794716850405" />
+      <entry key="S60" value="3.2029065602002014" />
+      <entry key="M2" value="3.6442433761584745" />
+      <entry key="M5" value="5.372755076658296" />
+      <entry key="M10" value="8.429214760235045" />
+      <entry key="M15" value="10.548833852778817" />
+      <entry key="M30" value="14.520032735332393" />
+      <entry key="H1" value="24.634945422112075" />
+      <entry key="H2" value="53.29530065065674" />
+      <entry key="H4" value="99.6450052044159" />
+      <entry key="D1" value="204.7348478549689" />
+      <entry key="W1" value="237.77903220168898" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="9.96401243916335E-106" />
+      <entry key="S5" value="1.1885069889092483E-42" />
+      <entry key="S10" value="1.6037370724364324E-21" />
+      <entry key="S30" value="2.3574902499398105E-7" />
+      <entry key="S60" value="8.802535929486624E-4" />
+      <entry key="M2" value="0.05681920901014842" />
+      <entry key="M5" value="0.7200982462586948" />
+      <entry key="M10" value="1.720902386716284" />
+      <entry key="M15" value="2.3654949429278727" />
+      <entry key="M30" value="3.7108769333875467" />
+      <entry key="H1" value="7.633114434960203" />
+      <entry key="H2" value="18.36317399341524" />
+      <entry key="H4" value="34.38330360240533" />
+      <entry key="D1" value="66.76774189295624" />
+      <entry key="W1" value="76.24299637674343" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="2.24996320531683E-57" />
+      <entry key="MS500" value="4.682080261283249E-12" />
+      <entry key="S2" value="0.0015753238596122791" />
+      <entry key="S5" value="0.11316502458383669" />
+      <entry key="S10" value="0.5904087693840334" />
+      <entry key="S30" value="2.0366678001082716" />
+      <entry key="S60" value="2.841105891596826" />
+      <entry key="M2" value="3.496412635148511" />
+      <entry key="M5" value="5.999079686300053" />
+      <entry key="M10" value="10.097113528966124" />
+      <entry key="M15" value="12.876364550597364" />
+      <entry key="M30" value="18.20925581410321" />
+      <entry key="H1" value="32.25324119710043" />
+      <entry key="H2" value="71.64520181008339" />
+      <entry key="H4" value="134.01723148575832" />
+      <entry key="D1" value="271.49930219577396" />
+      <entry key="W1" value="314.02150091210615" />
+    </decayedShown>
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 6
+}]]></component>
+  <component name="ProjectId" id="3GUBMYKJj1x2js1AZbDeonx4lfK" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/ankitaloni/Desktop/ChottulinkClient-DeferredLink/apps",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/apps" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-37e91769500f-intellij.indexing.shared.core-IU-261.25134.95" />
+        <option value="bundled-js-predefined-d6986cc7102b-31caf2ab9e3c-JavaScript-IU-261.25134.95" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0d56689d-6eef-4453-a1b9-fec9175100aa" name="Changes" comment="" />
+      <created>1784016220295</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1784016220295</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

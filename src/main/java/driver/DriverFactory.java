@@ -1,0 +1,108 @@
+package driver;
+
+import config.ConfigReader;
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.options.UiAutomator2Options;
+import io.appium.java_client.ios.IOSDriver;
+import io.appium.java_client.ios.options.XCUITestOptions;
+import server.AppiumServiceManager;
+
+public final class DriverFactory {
+
+    private static final ThreadLocal<AppiumDriver> driver = new ThreadLocal<>();
+
+    private DriverFactory() {
+    }
+
+    public static void initializeDriver() {
+
+        String platform = System.getProperty(
+                "platform",
+                ConfigReader.get("platform")
+        );
+
+        switch (platform.toLowerCase()) {
+
+            case "android":
+
+                UiAutomator2Options androidOptions = new UiAutomator2Options();
+
+                androidOptions.setPlatformName(
+                        ConfigReader.get("android.platformName"));
+
+                androidOptions.setDeviceName(
+                        ConfigReader.get("android.deviceName"));
+
+                androidOptions.setPlatformVersion(
+                        ConfigReader.get("android.platformVersion"));
+
+                androidOptions.setAutomationName(
+                        ConfigReader.get("android.automationName"));
+
+                // Launch Chrome
+                androidOptions.setBrowserName("Chrome");
+
+                driver.set(
+                        new AndroidDriver(
+                                AppiumServiceManager.getAppiumServerUrl(),
+                                androidOptions
+                        )
+                );
+
+                break;
+
+            case "ios":
+
+                XCUITestOptions iosOptions = new XCUITestOptions();
+
+                iosOptions.setPlatformName(
+                        ConfigReader.get("ios.platformName"));
+
+                iosOptions.setDeviceName(
+                        ConfigReader.get("ios.deviceName"));
+
+                iosOptions.setPlatformVersion(
+                        ConfigReader.get("ios.platformVersion"));
+
+                iosOptions.setAutomationName(
+                        ConfigReader.get("ios.automationName"));
+
+                // Launch Safari
+                iosOptions.setBrowserName("Safari");
+
+                driver.set(
+                        new IOSDriver(
+                                AppiumServiceManager.getAppiumServerUrl(),
+                                iosOptions
+                        )
+                );
+
+                break;
+
+            default:
+
+                throw new RuntimeException(
+                        "Unsupported Platform : " + platform
+                );
+        }
+
+    }
+
+    public static AppiumDriver getDriver() {
+        return driver.get();
+    }
+
+    public static void quitDriver() {
+
+        if (driver.get() != null) {
+
+            driver.get().quit();
+
+            driver.remove();
+
+        }
+
+    }
+
+}
