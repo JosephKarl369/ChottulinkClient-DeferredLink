@@ -24,10 +24,7 @@ public class DeferredLinkTest extends BaseTest {
         chromePage.clickOpenLink();
 
         // Verify Play Store / App Store is opened
-        Assert.assertTrue(
-                chromePage.isStoreOpened(),
-                "Store application was not opened."
-        );
+        Assert.assertTrue(chromePage.isStoreOpened(), "Store application was not opened.");
 
         // Install the application
         InstallerFactory.getInstaller().install();
@@ -35,38 +32,26 @@ public class DeferredLinkTest extends BaseTest {
         // Launch installed application
         if (ConfigReader.get("platform").equalsIgnoreCase("Android")) {
 
-            ((JavascriptExecutor) DriverFactory.getDriver())
-                    .executeScript(
-                            "mobile: activateApp",
-                            Map.of(
-                                    "appId",
-                                    ConfigReader.get("android.appPackage")
-                            )
-                    );
+            ((JavascriptExecutor) DriverFactory.getDriver()).executeScript("mobile: activateApp", Map.of("appId", ConfigReader.get("android.appPackage")));
 
         } else {
 
-            ((JavascriptExecutor) DriverFactory.getDriver())
-                    .executeScript(
-                            "mobile: activateApp",
-                            Map.of(
-                                    "bundleId",
-                                    ConfigReader.get("ios.bundleId")
-                            )
-                    );
+            ((JavascriptExecutor) DriverFactory.getDriver()).executeScript("mobile: activateApp", Map.of("bundleId", ConfigReader.get("ios.bundleId")));
 
         }
 
         // Verify Deferred Link
         DeferredLinkPage deferredLinkPage = new DeferredLinkPage();
 
-        Assert.assertTrue(
-                deferredLinkPage.verifyDeferredLink(
-                        ConfigReader.get("expectedDeferredLink")
-                ),
-                "Deferred link verification failed."
-        );
+        Assert.assertEquals(deferredLinkPage.getClickedUrl(), ConfigReader.get("expectedClickedUrl"));
 
+        Assert.assertEquals(deferredLinkPage.getShortLink(), ConfigReader.get("expectedShortLink"));
+
+        Assert.assertEquals(deferredLinkPage.getDeferredLink(), ConfigReader.get("expectedDeferredLink"));
+
+        Assert.assertTrue(deferredLinkPage.isDeferred());
+
+        Assert.assertEquals(deferredLinkPage.getStatus(), "Success");
     }
 
 }

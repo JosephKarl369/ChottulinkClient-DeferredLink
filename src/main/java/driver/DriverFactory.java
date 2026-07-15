@@ -41,7 +41,7 @@ public final class DriverFactory {
                         ConfigReader.get("android.automationName"));
 
                 // Launch Chrome
-                androidOptions.setBrowserName("Chrome");
+                androidOptions.setCapability("browserName", "Chrome");
 
                 driver.set(
                         new AndroidDriver(
@@ -69,7 +69,7 @@ public final class DriverFactory {
                         ConfigReader.get("ios.automationName"));
 
                 // Launch Safari
-                iosOptions.setBrowserName("Safari");
+                iosOptions.setCapability("browserName", "Safari");
 
                 driver.set(
                         new IOSDriver(

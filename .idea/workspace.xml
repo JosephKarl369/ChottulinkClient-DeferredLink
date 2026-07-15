@@ -4,32 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0d56689d-6eef-4453-a1b9-fec9175100aa" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/Chottullink Deferred Test.apk" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/config/ConfigReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/constants/FrameworkConstants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/driver/DriverFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pages/BasePage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pages/ChromePage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pages/DeferredLinkPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/server/AppiumServiceManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/utils/CommandExecutor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/utils/DeviceManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/utils/Downloader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/utils/WaitUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/utils/installer/AndroidInstaller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/utils/installer/AppInstaller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/utils/installer/IOSInstaller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/utils/installer/InstallerFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/config.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/tests/DeferredLinkTest.java" afterDir="false" />
+    <list default="true" id="0d56689d-6eef-4453-a1b9-fec9175100aa" name="Changes" comment="feat: add initial Appium automation framework with deferred deep link flow&#10;&#10;- Added Maven-based Appium framework&#10;- Configured DriverFactory with Android and iOS support&#10;- Added Appium server management&#10;- Implemented ConfigReader for configuration handling&#10;- Added BaseTest with TestNG lifecycle management&#10;- Implemented WaitUtils for explicit waits&#10;- Added CommandExecutor and DeviceManager utilities&#10;- Added AppInstaller with Android/iOS installer implementations&#10;- Implemented ChromePage and DeferredLinkPage&#10;- Added end-to-end deferred deep link test flow">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/Chottullink Deferred Test.apk" beforeDir="false" afterPath="$PROJECT_DIR$/apps/Chottullink Deferred Test.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/driver/DriverFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/driver/DriverFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/DeferredLinkPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/DeferredLinkPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/server/AppiumServiceManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/AppiumServiceManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/DeferredLinkTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/DeferredLinkTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,18 +30,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "ankitaloni369"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;ankitaloni369&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/JosephKarl369/ChottulinkClient-DeferredLink.git",
-    "accountId": "47718ec1-3ff5-4cad-a054-664b930c7296"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/JosephKarl369/ChottulinkClient-DeferredLink.git&quot;,
+    &quot;accountId&quot;: &quot;47718ec1-3ff5-4cad-a054-664b930c7296&quot;
   }
-}]]></component>
+}</component>
   <component name="McpProjectServerCommands">
     <commands />
     <urls />
@@ -65,65 +49,68 @@
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
       <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0000000000005145" />
-      <entry key="S2" value="1.0009130974995666" />
-      <entry key="S5" value="1.0903768966717178" />
-      <entry key="S10" value="1.4920328697188554" />
-      <entry key="S30" value="2.6215794716850405" />
-      <entry key="S60" value="3.2029065602002014" />
-      <entry key="M2" value="3.6442433761584745" />
-      <entry key="M5" value="5.372755076658296" />
-      <entry key="M10" value="8.429214760235045" />
-      <entry key="M15" value="10.548833852778817" />
-      <entry key="M30" value="14.520032735332393" />
-      <entry key="H1" value="24.634945422112075" />
-      <entry key="H2" value="53.29530065065674" />
-      <entry key="H4" value="99.6450052044159" />
-      <entry key="D1" value="204.7348478549689" />
-      <entry key="W1" value="237.77903220168898" />
+      <entry key="MS500" value="1.0" />
+      <entry key="S2" value="1.0" />
+      <entry key="S5" value="1.0" />
+      <entry key="S10" value="1.0" />
+      <entry key="S30" value="1.0" />
+      <entry key="S60" value="1.0000000087684675" />
+      <entry key="M2" value="1.0002844151105519" />
+      <entry key="M5" value="1.1545400927212603" />
+      <entry key="M10" value="2.3406231602824517" />
+      <entry key="M15" value="3.8548027500093776" />
+      <entry key="M30" value="7.730515270919171" />
+      <entry key="H1" value="15.61629451424526" />
+      <entry key="H2" value="37.41636765078361" />
+      <entry key="H4" value="83.85252973130403" />
+      <entry key="D1" value="225.8053677454295" />
+      <entry key="W1" value="277.8743317496521" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
       <entry key="MS500" value="0.0" />
-      <entry key="S2" value="9.96401243916335E-106" />
-      <entry key="S5" value="1.1885069889092483E-42" />
-      <entry key="S10" value="1.6037370724364324E-21" />
-      <entry key="S30" value="2.3574902499398105E-7" />
-      <entry key="S60" value="8.802535929486624E-4" />
-      <entry key="M2" value="0.05681920901014842" />
-      <entry key="M5" value="0.7200982462586948" />
-      <entry key="M10" value="1.720902386716284" />
-      <entry key="M15" value="2.3654949429278727" />
-      <entry key="M30" value="3.7108769333875467" />
-      <entry key="H1" value="7.633114434960203" />
-      <entry key="H2" value="18.36317399341524" />
-      <entry key="H4" value="34.38330360240533" />
-      <entry key="D1" value="66.76774189295624" />
-      <entry key="W1" value="76.24299637674343" />
+      <entry key="S2" value="5.97029134276783E-267" />
+      <entry key="S5" value="3.2389049994133166E-107" />
+      <entry key="S10" value="5.691137847050726E-54" />
+      <entry key="S30" value="1.785389741107122E-18" />
+      <entry key="S60" value="1.3361847707926584E-9" />
+      <entry key="M2" value="3.6554331537313156E-5" />
+      <entry key="M5" value="0.016980501552487905" />
+      <entry key="M10" value="0.14326043581566997" />
+      <entry key="M15" value="0.31607100350287515" />
+      <entry key="M30" value="0.9968658979236702" />
+      <entry key="H1" value="3.8966646180203153" />
+      <entry key="H2" value="13.092418329526941" />
+      <entry key="H4" value="31.123393546635132" />
+      <entry key="D1" value="79.47628868792586" />
+      <entry key="W1" value="95.86761413750897" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="2.24996320531683E-57" />
-      <entry key="MS500" value="4.682080261283249E-12" />
-      <entry key="S2" value="0.0015753238596122791" />
-      <entry key="S5" value="0.11316502458383669" />
-      <entry key="S10" value="0.5904087693840334" />
-      <entry key="S30" value="2.0366678001082716" />
-      <entry key="S60" value="2.841105891596826" />
-      <entry key="M2" value="3.496412635148511" />
-      <entry key="M5" value="5.999079686300053" />
-      <entry key="M10" value="10.097113528966124" />
-      <entry key="M15" value="12.876364550597364" />
-      <entry key="M30" value="18.20925581410321" />
-      <entry key="H1" value="32.25324119710043" />
-      <entry key="H2" value="71.64520181008339" />
-      <entry key="H4" value="134.01723148575832" />
-      <entry key="D1" value="271.49930219577396" />
-      <entry key="W1" value="314.02150091210615" />
+      <entry key="MS100" value="8.131359975509232E-7" />
+      <entry key="MS500" value="0.06053863682666422" />
+      <entry key="S2" value="0.49603024656612427" />
+      <entry key="S5" value="0.7554457177753392" />
+      <entry key="S10" value="0.8691638037650551" />
+      <entry key="S30" value="0.9543343236229989" />
+      <entry key="S60" value="0.9769003753313549" />
+      <entry key="M2" value="0.9887033654921652" />
+      <entry key="M5" value="1.1667990731757836" />
+      <entry key="M10" value="2.481295468819684" />
+      <entry key="M15" value="4.168932084042139" />
+      <entry key="M30" value="8.725773490478748" />
+      <entry key="H1" value="19.5099414076235" />
+      <entry key="H2" value="50.50294815036595" />
+      <entry key="H4" value="114.9683561554654" />
+      <entry key="D1" value="305.2782821389317" />
+      <entry key="W1" value="373.7413629036924" />
     </decayedShown>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="3GUBMYKJj1x2js1AZbDeonx4lfK" />
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
@@ -138,6 +125,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "TestNG.DeferredLinkTest.executor": "Run",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
@@ -158,6 +146,30 @@
       <recent name="$PROJECT_DIR$/apps" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration name="DeferredLinkTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="ChottulinkClient-DeferredLink" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.DeferredLinkTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="TestNG.DeferredLinkTest" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -174,6 +186,15 @@
       <option name="presentableId" value="Default" />
       <updated>1784016220295</updated>
     </task>
+    <task id="LOCAL-00001" summary="feat: add initial Appium automation framework with deferred deep link flow&#10;&#10;- Added Maven-based Appium framework&#10;- Configured DriverFactory with Android and iOS support&#10;- Added Appium server management&#10;- Implemented ConfigReader for configuration handling&#10;- Added BaseTest with TestNG lifecycle management&#10;- Implemented WaitUtils for explicit waits&#10;- Added CommandExecutor and DeviceManager utilities&#10;- Added AppInstaller with Android/iOS installer implementations&#10;- Implemented ChromePage and DeferredLinkPage&#10;- Added end-to-end deferred deep link test flow">
+      <option name="closed" value="true" />
+      <created>1784063458210</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1784063458210</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -189,5 +210,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feat: add initial Appium automation framework with deferred deep link flow&#10;&#10;- Added Maven-based Appium framework&#10;- Configured DriverFactory with Android and iOS support&#10;- Added Appium server management&#10;- Implemented ConfigReader for configuration handling&#10;- Added BaseTest with TestNG lifecycle management&#10;- Implemented WaitUtils for explicit waits&#10;- Added CommandExecutor and DeviceManager utilities&#10;- Added AppInstaller with Android/iOS installer implementations&#10;- Implemented ChromePage and DeferredLinkPage&#10;- Added end-to-end deferred deep link test flow" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add initial Appium automation framework with deferred deep link flow&#10;&#10;- Added Maven-based Appium framework&#10;- Configured DriverFactory with Android and iOS support&#10;- Added Appium server management&#10;- Implemented ConfigReader for configuration handling&#10;- Added BaseTest with TestNG lifecycle management&#10;- Implemented WaitUtils for explicit waits&#10;- Added CommandExecutor and DeviceManager utilities&#10;- Added AppInstaller with Android/iOS installer implementations&#10;- Implemented ChromePage and DeferredLinkPage&#10;- Added end-to-end deferred deep link test flow" />
   </component>
 </project>

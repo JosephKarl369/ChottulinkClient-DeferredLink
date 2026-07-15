@@ -15,24 +15,32 @@
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
 
-        <appium.version>9.5.0</appium.version>
-        <selenium.version>4.34.0</selenium.version>
+        <appium.version>9.4.0</appium.version>
+        <selenium.version>4.27.0</selenium.version>
         <testng.version>7.11.0</testng.version>
         <slf4j.version>2.0.17</slf4j.version>
     </properties>
+
+    <dependencyManagement>
+        <dependencies>
+
+            <dependency>
+                <groupId>org.seleniumhq.selenium</groupId>
+                <artifactId>selenium-bom</artifactId>
+                <version>4.27.0</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
     <dependencies>
+
         <!-- Appium -->
         <dependency>
             <groupId>io.appium</groupId>
             <artifactId>java-client</artifactId>
             <version>${appium.version}</version>
-        </dependency>
-
-        <!-- Selenium -->
-        <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-java</artifactId>
-            <version>${selenium.version}</version>
         </dependency>
 
         <!-- TestNG -->
@@ -48,6 +56,11 @@
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
             <version>${slf4j.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
         </dependency>
     </dependencies>
 </project>
