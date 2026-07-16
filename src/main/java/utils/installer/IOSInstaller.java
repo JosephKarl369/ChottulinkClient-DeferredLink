@@ -45,4 +45,9 @@ public class IOSInstaller implements AppInstaller {
 
     }
 
+    @Override
+    public void uninstall() {
+
+    }
+
 }

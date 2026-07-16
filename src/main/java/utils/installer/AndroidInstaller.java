@@ -48,4 +48,28 @@ public class AndroidInstaller implements AppInstaller {
 
     }
 
+    @Override
+    public void uninstall() {
+
+        CommandExecutor.execute(
+
+                List.of(
+
+                        "adb",
+
+                        "-s",
+
+                        DeviceManager.getAndroidDeviceId(),
+
+                        "uninstall",
+
+                        ConfigReader.get("android.appPackage")
+
+                )
+
+        );
+
+        System.out.println("Android App Uninstalled Successfully.");
+
+    }
 }

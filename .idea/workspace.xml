@@ -4,13 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0d56689d-6eef-4453-a1b9-fec9175100aa" name="Changes" comment="feat: add initial Appium automation framework with deferred deep link flow&#10;&#10;- Added Maven-based Appium framework&#10;- Configured DriverFactory with Android and iOS support&#10;- Added Appium server management&#10;- Implemented ConfigReader for configuration handling&#10;- Added BaseTest with TestNG lifecycle management&#10;- Implemented WaitUtils for explicit waits&#10;- Added CommandExecutor and DeviceManager utilities&#10;- Added AppInstaller with Android/iOS installer implementations&#10;- Implemented ChromePage and DeferredLinkPage&#10;- Added end-to-end deferred deep link test flow">
+    <list default="true" id="0d56689d-6eef-4453-a1b9-fec9175100aa" name="Changes" comment="- Added automatic Appium server startup and shutdown&#10;- Refactored DriverFactory for Android/iOS initialization&#10;- Improved BaseTest lifecycle management&#10;- Implemented Deferred Link test flow&#10;- Added DeferredLinkPage validations&#10;- Updated framework configuration&#10;- Updated Maven dependencies&#10;- Added latest test APK">
+      <change afterPath="$PROJECT_DIR$/Jenkinsfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/reports/ExtentLogger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/reports/ExtentManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/reports/ExtentReport.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/listeners/TestListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testing.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/Chottullink Deferred Test.apk" beforeDir="false" afterPath="$PROJECT_DIR$/apps/Chottullink Deferred Test.apk" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/driver/DriverFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/driver/DriverFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/BasePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/ChromePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/ChromePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pages/DeferredLinkPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/DeferredLinkPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/server/AppiumServiceManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/AppiumServiceManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/WaitUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/WaitUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/installer/AndroidInstaller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/installer/AndroidInstaller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/installer/AppInstaller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/installer/AppInstaller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/installer/IOSInstaller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/installer/IOSInstaller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tests/DeferredLinkTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/DeferredLinkTest.java" afterDir="false" />
@@ -48,61 +58,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0" />
-      <entry key="S2" value="1.0" />
-      <entry key="S5" value="1.0" />
-      <entry key="S10" value="1.0" />
-      <entry key="S30" value="1.0" />
-      <entry key="S60" value="1.0000000087684675" />
-      <entry key="M2" value="1.0002844151105519" />
-      <entry key="M5" value="1.1545400927212603" />
-      <entry key="M10" value="2.3406231602824517" />
-      <entry key="M15" value="3.8548027500093776" />
-      <entry key="M30" value="7.730515270919171" />
-      <entry key="H1" value="15.61629451424526" />
-      <entry key="H2" value="37.41636765078361" />
-      <entry key="H4" value="83.85252973130403" />
-      <entry key="D1" value="225.8053677454295" />
-      <entry key="W1" value="277.8743317496521" />
+      <entry key="MS100" value="1.5107546265440566" />
+      <entry key="MS500" value="3.402427054302074" />
+      <entry key="S2" value="4.504571404684045" />
+      <entry key="S5" value="4.792519027803957" />
+      <entry key="S10" value="4.894637250782701" />
+      <entry key="S30" value="4.964511765165653" />
+      <entry key="S60" value="4.982209534906665" />
+      <entry key="M2" value="4.991093147806401" />
+      <entry key="M5" value="4.996434466208619" />
+      <entry key="M10" value="4.99822065610049" />
+      <entry key="M15" value="4.999384174831895" />
+      <entry key="M30" value="5.11586013068001" />
+      <entry key="H1" value="7.897844660366152" />
+      <entry key="H2" value="25.616888372331815" />
+      <entry key="H4" value="75.29108968847514" />
+      <entry key="D1" value="306.8720662894307" />
+      <entry key="W1" value="421.8469544147552" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
       <entry key="MS500" value="0.0" />
-      <entry key="S2" value="5.97029134276783E-267" />
-      <entry key="S5" value="3.2389049994133166E-107" />
-      <entry key="S10" value="5.691137847050726E-54" />
-      <entry key="S30" value="1.785389741107122E-18" />
-      <entry key="S60" value="1.3361847707926584E-9" />
-      <entry key="M2" value="3.6554331537313156E-5" />
-      <entry key="M5" value="0.016980501552487905" />
-      <entry key="M10" value="0.14326043581566997" />
-      <entry key="M15" value="0.31607100350287515" />
-      <entry key="M30" value="0.9968658979236702" />
-      <entry key="H1" value="3.8966646180203153" />
-      <entry key="H2" value="13.092418329526941" />
-      <entry key="H4" value="31.123393546635132" />
-      <entry key="D1" value="79.47628868792586" />
-      <entry key="W1" value="95.86761413750897" />
+      <entry key="S2" value="0.0" />
+      <entry key="S5" value="0.0" />
+      <entry key="S10" value="0.0" />
+      <entry key="S30" value="1.810078846950856E-162" />
+      <entry key="S60" value="1.9013204523595904E-81" />
+      <entry key="M2" value="6.165459591368729E-41" />
+      <entry key="M5" value="1.249128088030819E-16" />
+      <entry key="M10" value="1.5949523764040822E-8" />
+      <entry key="M15" value="8.457252158436129E-6" />
+      <entry key="M30" value="0.00673259373885595" />
+      <entry key="H1" value="0.3581806674946701" />
+      <entry key="H2" value="3.8041164514965735" />
+      <entry key="H4" value="16.8708603040619" />
+      <entry key="D1" value="89.12592163323448" />
+      <entry key="W1" value="125.41580917419282" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="8.131359975509232E-7" />
-      <entry key="MS500" value="0.06053863682666422" />
-      <entry key="S2" value="0.49603024656612427" />
-      <entry key="S5" value="0.7554457177753392" />
-      <entry key="S10" value="0.8691638037650551" />
-      <entry key="S30" value="0.9543343236229989" />
-      <entry key="S60" value="0.9769003753313549" />
-      <entry key="M2" value="0.9887033654921652" />
-      <entry key="M5" value="1.1667990731757836" />
-      <entry key="M10" value="2.481295468819684" />
-      <entry key="M15" value="4.168932084042139" />
-      <entry key="M30" value="8.725773490478748" />
-      <entry key="H1" value="19.5099414076235" />
-      <entry key="H2" value="50.50294815036595" />
-      <entry key="H4" value="114.9683561554654" />
-      <entry key="D1" value="305.2782821389317" />
-      <entry key="W1" value="373.7413629036924" />
+      <entry key="MS100" value="1.4526205682706104" />
+      <entry key="MS500" value="3.3775490092005875" />
+      <entry key="S2" value="4.496426422992916" />
+      <entry key="S5" value="4.7890597339993555" />
+      <entry key="S10" value="4.8928719044008355" />
+      <entry key="S30" value="4.963915173433441" />
+      <entry key="S60" value="4.981910207791344" />
+      <entry key="M2" value="4.990943225422327" />
+      <entry key="M5" value="4.996374435006401" />
+      <entry key="M10" value="4.998190644609269" />
+      <entry key="M15" value="4.999372462707823" />
+      <entry key="M30" value="5.1225640493359546" />
+      <entry key="H1" value="8.255727201053169" />
+      <entry key="H2" value="29.419663442777892" />
+      <entry key="H4" value="92.15875982649172" />
+      <entry key="D1" value="395.9947075551885" />
+      <entry key="W1" value="547.2620879126695" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -138,7 +148,7 @@
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -194,11 +204,22 @@
       <option name="project" value="LOCAL" />
       <updated>1784063458210</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="- Added automatic Appium server startup and shutdown&#10;- Refactored DriverFactory for Android/iOS initialization&#10;- Improved BaseTest lifecycle management&#10;- Implemented Deferred Link test flow&#10;- Added DeferredLinkPage validations&#10;- Updated framework configuration&#10;- Updated Maven dependencies&#10;- Added latest test APK">
+      <option name="closed" value="true" />
+      <created>1784110554879</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1784110554879</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="Jenkinsfile" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -213,6 +234,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat: add initial Appium automation framework with deferred deep link flow&#10;&#10;- Added Maven-based Appium framework&#10;- Configured DriverFactory with Android and iOS support&#10;- Added Appium server management&#10;- Implemented ConfigReader for configuration handling&#10;- Added BaseTest with TestNG lifecycle management&#10;- Implemented WaitUtils for explicit waits&#10;- Added CommandExecutor and DeviceManager utilities&#10;- Added AppInstaller with Android/iOS installer implementations&#10;- Implemented ChromePage and DeferredLinkPage&#10;- Added end-to-end deferred deep link test flow" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add initial Appium automation framework with deferred deep link flow&#10;&#10;- Added Maven-based Appium framework&#10;- Configured DriverFactory with Android and iOS support&#10;- Added Appium server management&#10;- Implemented ConfigReader for configuration handling&#10;- Added BaseTest with TestNG lifecycle management&#10;- Implemented WaitUtils for explicit waits&#10;- Added CommandExecutor and DeviceManager utilities&#10;- Added AppInstaller with Android/iOS installer implementations&#10;- Implemented ChromePage and DeferredLinkPage&#10;- Added end-to-end deferred deep link test flow" />
+    <MESSAGE value="- Added automatic Appium server startup and shutdown&#10;- Refactored DriverFactory for Android/iOS initialization&#10;- Improved BaseTest lifecycle management&#10;- Implemented Deferred Link test flow&#10;- Added DeferredLinkPage validations&#10;- Updated framework configuration&#10;- Updated Maven dependencies&#10;- Added latest test APK" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Added automatic Appium server startup and shutdown&#10;- Refactored DriverFactory for Android/iOS initialization&#10;- Improved BaseTest lifecycle management&#10;- Implemented Deferred Link test flow&#10;- Added DeferredLinkPage validations&#10;- Updated framework configuration&#10;- Updated Maven dependencies&#10;- Added latest test APK" />
   </component>
 </project>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Deferred Link Suite">
+
+    <listeners>
+        <listener class-name="listeners.TestListener"/>
+    </listeners>
+
+    <test name="Deferred Link">
+
+        <parameter name="platform" value="Android"/>
+
+        <classes>
+            <class name="tests.DeferredLinkTest"/>
+        </classes>
+
+    </test>
+
+</suite>

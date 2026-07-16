@@ -6,38 +6,129 @@ import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import utils.WaitUtils;
 
 import java.util.Map;
 
 public class ChromePage extends BasePage {
 
-    private final By openLinkButton = AppiumBy.accessibilityId("open_link_button");
+    // Chrome Locators
+    private final By searchBox = AppiumBy.id("com.android.chrome:id/search_box_text");
 
+    private final By addressBar = AppiumBy.id("com.android.chrome:id/url_bar");
+
+    // Web Page Button
+    private final By openLinkButton = By.xpath("//android.widget.Button[@resource-id='openBtn']");
+
+    // Chrome First Run
+    private final By dismissSignInButton = AppiumBy.id("com.android.chrome:id/signin_fre_dismiss_button");
+
+    private final By negativeButton = AppiumBy.id("com.android.chrome:id/negative_button");
+
+
+    /**
+     * Handles Chrome first launch screens.
+     */
+    public void handleChromeConfiguration() {
+
+        clickIfPresent(dismissSignInButton);
+
+        clickIfPresent(negativeButton);
+
+    }
+
+    /**
+     * Opens the test website.
+     */
     public void openWebsite() {
 
-        DriverFactory.getDriver().get(ConfigReader.get("htmlPage"));
+        click(searchBox);
+
+        WebElement url = WaitUtils.waitForVisibility(addressBar);
+
+        url.clear();
+
+        url.sendKeys(ConfigReader.get("htmlPage"));
+
+        ((AndroidDriver) DriverFactory.getDriver()).executeScript("mobile: performEditorAction", Map.of("action", "go"));
+
+        try {
+            Thread.sleep(5000);
+            System.out.println(DriverFactory.getDriver().getPageSource());
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+
+        WaitUtils.waitForVisibility(openLinkButton);
 
     }
 
+    /**
+     * Click Deferred Link button.
+     */
     public void clickOpenLink() {
 
-        click(openLinkButton);
+        WebElement button = WaitUtils.waitForVisibility(openLinkButton);
+
+        System.out.println("Displayed : " + button.isDisplayed());
+        System.out.println("Enabled   : " + button.isEnabled());
+        System.out.println("Location  : " + button.getLocation());
+        System.out.println("Size      : " + button.getSize());
+
+        tap(openLinkButton);
 
     }
 
+    /**
+     * Verify Store Opened
+     */
+    @SuppressWarnings("unchecked")
     public boolean isStoreOpened() {
 
         if (DriverFactory.getDriver() instanceof AndroidDriver) {
 
-            String packageName = ((AndroidDriver) DriverFactory.getDriver()).getCurrentPackage();
+            AndroidDriver driver = (AndroidDriver) DriverFactory.getDriver();
 
-            return packageName.equals(ConfigReader.get("android.storePackage"));
+            for (int i = 0; i < 15; i++) {
 
+                String currentPackage = driver.getCurrentPackage();
+
+                System.out.println("Current Package : " + currentPackage);
+
+                if (currentPackage.equals(ConfigReader.get("android.storePackage"))) {
+                    return true;
+                }
+
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
+            }
+
+            return false;
         }
 
         Map<String, Object> appInfo = (Map<String, Object>) ((IOSDriver) DriverFactory.getDriver()).executeScript("mobile: activeAppInfo");
 
-        return appInfo.get("bundleId").toString().equals(ConfigReader.get("ios.storeBundleId"));
+        String bundleId = appInfo.get("bundleId").toString();
+
+        System.out.println("Current Bundle : " + bundleId);
+
+        return bundleId.equals(ConfigReader.get("ios.storeBundleId"));
+    }
+
+    private void clickIfPresent(By locator) {
+
+        try {
+
+            WaitUtils.waitForClickable(locator).click();
+
+
+        } catch (Exception ignored) {
+
+        }
 
     }
 

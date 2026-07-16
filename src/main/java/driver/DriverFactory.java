@@ -41,7 +41,8 @@ public final class DriverFactory {
                         ConfigReader.get("android.automationName"));
 
                 // Launch Chrome
-                androidOptions.setCapability("browserName", "Chrome");
+                androidOptions.setAppPackage("com.android.chrome");
+                androidOptions.setAppActivity("com.google.android.apps.chrome.Main");
 
                 driver.set(
                         new AndroidDriver(

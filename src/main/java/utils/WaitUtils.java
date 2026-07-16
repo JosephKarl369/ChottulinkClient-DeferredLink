@@ -11,70 +11,51 @@ import java.time.Duration;
 
 public final class WaitUtils {
 
+    private static final int EXPLICIT_WAIT = ConfigReader.getInt("explicitWait");
+
     private WaitUtils() {
     }
 
-    /**
-     * Creates WebDriverWait instance
-     */
     private static WebDriverWait getWait() {
 
-        return new WebDriverWait(DriverFactory.getDriver(), Duration.ofSeconds(ConfigReader.getInt("explicitWait")));
-    }
+        return new WebDriverWait(DriverFactory.getDriver(), Duration.ofSeconds(EXPLICIT_WAIT));
 
-    // ==========================
-    // Visibility
-    // ==========================
+    }
 
     public static WebElement waitForVisibility(By locator) {
 
         return getWait().until(ExpectedConditions.visibilityOfElementLocated(locator));
+
     }
-
-    public static WebElement waitForVisibility(WebElement element) {
-
-        return getWait().until(ExpectedConditions.visibilityOf(element));
-    }
-
-    // ==========================
-    // Clickable
-    // ==========================
 
     public static WebElement waitForClickable(By locator) {
 
         return getWait().until(ExpectedConditions.elementToBeClickable(locator));
+
     }
-
-    public static WebElement waitForClickable(WebElement element) {
-
-        return getWait().until(ExpectedConditions.elementToBeClickable(element));
-    }
-
-    // ==========================
-    // Presence
-    // ==========================
 
     public static WebElement waitForPresence(By locator) {
 
         return getWait().until(ExpectedConditions.presenceOfElementLocated(locator));
+
     }
-
-    // ==========================
-    // Invisibility
-    // ==========================
-
-    public static boolean waitForInvisibility(WebElement element) {
-
-        return getWait().until(ExpectedConditions.invisibilityOf(element));
-    }
-
-    // ==========================
-    // Text
-    // ==========================
 
     public static boolean waitForText(WebElement element, String text) {
 
         return getWait().until(ExpectedConditions.textToBePresentInElement(element, text));
+
+    }
+
+    public static boolean waitForInvisibility(WebElement element) {
+
+        return getWait().until(ExpectedConditions.invisibilityOf(element));
+
+    }
+
+    public static void waitForVisibility(WebElement element) {
+
+        getWait().until(ExpectedConditions.visibilityOf(element));
+
     }
 
 }
