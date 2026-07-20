@@ -20,10 +20,7 @@ public final class CommandExecutor {
 
             Process process = processBuilder.start();
 
-            BufferedReader reader =
-                    new BufferedReader(
-                            new InputStreamReader(
-                                    process.getInputStream()));
+            BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
 
             String line;
 
@@ -35,9 +32,7 @@ public final class CommandExecutor {
 
             if (exitCode != 0) {
 
-                throw new RuntimeException(
-                        "Command execution failed.\nExit Code : "
-                                + exitCode);
+                throw new RuntimeException("Command execution failed.\nExit Code : " + exitCode);
 
             }
 
@@ -45,10 +40,37 @@ public final class CommandExecutor {
 
             Thread.currentThread().interrupt();
 
-            throw new RuntimeException(
-                    "Unable to execute command.",
-                    e
-            );
+            throw new RuntimeException("Unable to execute command.", e);
+        }
+    }
+
+    public static String executeAndGetOutput(List<String> command) {
+
+        ProcessBuilder processBuilder = new ProcessBuilder(command);
+        processBuilder.redirectErrorStream(true);
+
+        try {
+
+            Process process = processBuilder.start();
+
+            BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+
+            StringBuilder output = new StringBuilder();
+            String line;
+
+            while ((line = reader.readLine()) != null) {
+                output.append(line).append(System.lineSeparator());
+            }
+
+            process.waitFor();
+
+            return output.toString();
+
+        } catch (IOException | InterruptedException e) {
+
+            Thread.currentThread().interrupt();
+
+            throw new RuntimeException("Unable to execute command.", e);
         }
     }
 }

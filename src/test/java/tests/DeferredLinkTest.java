@@ -10,6 +10,8 @@ import pages.ChromePage;
 import pages.DeferredLinkPage;
 import reports.ExtentLogger;
 import utils.installer.InstallerFactory;
+import reports.JsonConsoleReport;
+import reports.ValidationReport;
 
 import java.util.Map;
 
@@ -18,12 +20,9 @@ public class DeferredLinkTest extends BaseTest {
     @Test(description = "Verify Deferred Deep Link Flow")
     public void verifyDeferredDeepLink() {
 
-        String platform = System.getProperty(
-                "platform",
-                ConfigReader.get("platform")
-        );
+        String platform = System.getProperty("platform", ConfigReader.get("platform"));
 
-        // Ensure fresh install for Deferred Deep Link
+        // Ensure fresh install
         InstallerFactory.getInstaller().uninstall();
 
         ChromePage chromePage = new ChromePage();
@@ -52,14 +51,11 @@ public class DeferredLinkTest extends BaseTest {
 
         ExtentLogger.pass("Deferred Link clicked");
 
-        Assert.assertTrue(
-                chromePage.isStoreOpened(),
-                "Store application was not opened."
-        );
+        Assert.assertTrue(chromePage.isStoreOpened(), "Store application was not opened.");
 
         ExtentLogger.pass("Play Store opened successfully");
 
-        // Install App
+        // Install Application
         InstallerFactory.getInstaller().install();
 
         ExtentLogger.pass("Application installed");
@@ -67,19 +63,11 @@ public class DeferredLinkTest extends BaseTest {
         // Launch Installed App
         if (platform.equalsIgnoreCase("Android")) {
 
-            ((JavascriptExecutor) DriverFactory.getDriver())
-                    .executeScript(
-                            "mobile: activateApp",
-                            Map.of("appId", ConfigReader.get("android.appPackage"))
-                    );
+            ((JavascriptExecutor) DriverFactory.getDriver()).executeScript("mobile: activateApp", Map.of("appId", ConfigReader.get("android.appPackage")));
 
         } else {
 
-            ((JavascriptExecutor) DriverFactory.getDriver())
-                    .executeScript(
-                            "mobile: activateApp",
-                            Map.of("bundleId", ConfigReader.get("ios.bundleId"))
-                    );
+            ((JavascriptExecutor) DriverFactory.getDriver()).executeScript("mobile: activateApp", Map.of("bundleId", ConfigReader.get("ios.bundleId")));
         }
 
         // Wait for App to load
@@ -96,9 +84,13 @@ public class DeferredLinkTest extends BaseTest {
         //==========================
 
         String actualClickedUrl = deferredLinkPage.getClickedUrl();
+
         String actualShortLink = deferredLinkPage.getShortLink();
+
         String actualDeferredLink = deferredLinkPage.getDeferredLink();
+
         boolean actualIsDeferred = deferredLinkPage.isDeferred();
+
         String actualStatus = deferredLinkPage.getStatus();
 
         //==========================
@@ -106,52 +98,36 @@ public class DeferredLinkTest extends BaseTest {
         //==========================
 
         String expectedClickedUrl = ConfigReader.get("expectedClickedUrl");
+
         String expectedShortLink = ConfigReader.get("expectedShortLink");
+
         String expectedDeferredLink = ConfigReader.get("expectedDeferredLink");
+
         String expectedStatus = ConfigReader.get("expectedStatus");
 
         //==========================
-        // Report Logging
+        // Validation + Reporting
         //==========================
 
-        ExtentLogger.info(
-                "Clicked URL<br>Expected : " + expectedClickedUrl +
-                        "<br>Actual : " + actualClickedUrl
-        );
+        JsonConsoleReport.clear();
 
-        ExtentLogger.info(
-                "Short Link<br>Expected : " + expectedShortLink +
-                        "<br>Actual : " + actualShortLink
-        );
+        boolean result = true;
 
-        ExtentLogger.info(
-                "Deferred Link<br>Expected : " + expectedDeferredLink +
-                        "<br>Actual : " + actualDeferredLink
-        );
+        result &= ValidationReport.verify("Clicked URL", expectedClickedUrl, actualClickedUrl);
 
-        ExtentLogger.info(
-                "Is Deferred<br>Expected : true" +
-                        "<br>Actual : " + actualIsDeferred
-        );
+        result &= ValidationReport.verify("Short Link", expectedShortLink, actualShortLink);
 
-        ExtentLogger.info(
-                "Status<br>Expected : " + expectedStatus +
-                        "<br>Actual : " + actualStatus
-        );
+        result &= ValidationReport.verify("Deferred Link", expectedDeferredLink, actualDeferredLink);
 
-        //==========================
-        // Assertions
-        //==========================
+        result &= ValidationReport.verify("Is Deferred", true, actualIsDeferred);
 
-        Assert.assertEquals(actualClickedUrl, expectedClickedUrl);
+        result &= ValidationReport.verify("Status", expectedStatus, actualStatus);
 
-        Assert.assertEquals(actualShortLink, expectedShortLink);
+        // Print JSON report in Jenkins Console
+        JsonConsoleReport.print();
 
-        Assert.assertEquals(actualDeferredLink, expectedDeferredLink);
-
-        Assert.assertTrue(actualIsDeferred);
-
-        Assert.assertEquals(actualStatus, expectedStatus);
+        // Final Assertion
+        Assert.assertTrue(result, "Deferred Deep Link validation failed.");
 
         ExtentLogger.pass("Deferred Deep Link verification completed successfully.");
     }

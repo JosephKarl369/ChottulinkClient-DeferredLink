@@ -4,9 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0d56689d-6eef-4453-a1b9-fec9175100aa" name="Changes" comment="feat: implement deferred deep link automation framework with CI support&#10;&#10;- Implement complete deferred deep link validation flow&#10;- Automate Chrome launch and deferred link navigation&#10;- Verify Play Store redirection before app installation&#10;- Add APK uninstall and reinstall workflow&#10;- Improve installer framework for Android and iOS&#10;- Add DeferredLinkPage using Page Object Model&#10;- Enhance reusable wait utilities and BasePage methods&#10;- Integrate Extent Reports with custom logging&#10;- Add TestNG listener for reporting&#10;- Add Jenkins pipeline support for CI/CD&#10;- Refactor framework for scalability and maintainability">
+    <list default="true" id="0d56689d-6eef-4453-a1b9-fec9175100aa" name="Changes" comment="refractor - Update the Jenkinsfile">
+      <change afterPath="$PROJECT_DIR$/src/main/java/reports/JsonConsoleReport.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/reports/ValidationReport.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Jenkinsfile" beforeDir="false" afterPath="$PROJECT_DIR$/Jenkinsfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/CommandExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/CommandExecutor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/installer/AndroidInstaller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/installer/AndroidInstaller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/DeferredLinkTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/DeferredLinkTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,61 +47,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.5107546265440566" />
-      <entry key="MS500" value="3.402427054302074" />
-      <entry key="S2" value="4.504571404684045" />
-      <entry key="S5" value="4.792519027803957" />
-      <entry key="S10" value="4.894637250782701" />
-      <entry key="S30" value="4.964511765165653" />
-      <entry key="S60" value="4.982209534906665" />
-      <entry key="M2" value="4.991093147806401" />
-      <entry key="M5" value="4.996434466208619" />
-      <entry key="M10" value="4.99822065610049" />
-      <entry key="M15" value="4.999384174831895" />
-      <entry key="M30" value="5.11586013068001" />
-      <entry key="H1" value="7.897844660366152" />
-      <entry key="H2" value="25.616888372331815" />
-      <entry key="H4" value="75.29108968847514" />
-      <entry key="D1" value="306.8720662894307" />
-      <entry key="W1" value="421.8469544147552" />
+      <entry key="MS100" value="1.009017779014614" />
+      <entry key="MS500" value="1.915387613056009" />
+      <entry key="S2" value="5.0213282535917845" />
+      <entry key="S5" value="6.993644026975875" />
+      <entry key="S10" value="7.916799490943023" />
+      <entry key="S30" value="9.404653098479935" />
+      <entry key="S60" value="11.748411278855333" />
+      <entry key="M2" value="15.691110241877562" />
+      <entry key="M5" value="22.335819508865807" />
+      <entry key="M10" value="27.028751672807573" />
+      <entry key="M15" value="29.391713922380134" />
+      <entry key="M30" value="32.605767612274185" />
+      <entry key="H1" value="36.693268145193876" />
+      <entry key="H2" value="53.399427978248106" />
+      <entry key="H4" value="101.43276928693311" />
+      <entry key="D1" value="334.91583043658187" />
+      <entry key="W1" value="453.0683512448805" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="0.0" />
-      <entry key="S2" value="0.0" />
-      <entry key="S5" value="0.0" />
-      <entry key="S10" value="0.0" />
-      <entry key="S30" value="1.810078846950856E-162" />
-      <entry key="S60" value="1.9013204523595904E-81" />
-      <entry key="M2" value="6.165459591368729E-41" />
-      <entry key="M5" value="1.249128088030819E-16" />
-      <entry key="M10" value="1.5949523764040822E-8" />
-      <entry key="M15" value="8.457252158436129E-6" />
-      <entry key="M30" value="0.00673259373885595" />
-      <entry key="H1" value="0.3581806674946701" />
-      <entry key="H2" value="3.8041164514965735" />
-      <entry key="H4" value="16.8708603040619" />
-      <entry key="D1" value="89.12592163323448" />
-      <entry key="W1" value="125.41580917419282" />
+      <entry key="MS500" value="2.15989097068556E-237" />
+      <entry key="S2" value="6.817230168552529E-60" />
+      <entry key="S5" value="2.1549796972615305E-24" />
+      <entry key="S10" value="1.467984910433868E-12" />
+      <entry key="S30" value="1.1365115765283131E-4" />
+      <entry key="S60" value="0.010660729696077623" />
+      <entry key="M2" value="0.1032508096630609" />
+      <entry key="M5" value="0.40323422509489365" />
+      <entry key="M10" value="0.6350072663310413" />
+      <entry key="M15" value="0.7387892732670616" />
+      <entry key="M30" value="0.8631659906323297" />
+      <entry key="H1" value="1.1904345565577232" />
+      <entry key="H2" value="4.22461652342993" />
+      <entry key="H4" value="16.60322772751409" />
+      <entry key="D1" value="88.98762489126874" />
+      <entry key="W1" value="126.18591004023084" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="1.4526205682706104" />
-      <entry key="MS500" value="3.3775490092005875" />
-      <entry key="S2" value="4.496426422992916" />
-      <entry key="S5" value="4.7890597339993555" />
-      <entry key="S10" value="4.8928719044008355" />
-      <entry key="S30" value="4.963915173433441" />
-      <entry key="S60" value="4.981910207791344" />
-      <entry key="M2" value="4.990943225422327" />
-      <entry key="M5" value="4.996374435006401" />
-      <entry key="M10" value="4.998190644609269" />
-      <entry key="M15" value="4.999372462707823" />
-      <entry key="M30" value="5.1225640493359546" />
-      <entry key="H1" value="8.255727201053169" />
-      <entry key="H2" value="29.419663442777892" />
-      <entry key="H4" value="92.15875982649172" />
-      <entry key="D1" value="395.9947075551885" />
-      <entry key="W1" value="547.2620879126695" />
+      <entry key="MS100" value="0.9546483256378534" />
+      <entry key="MS500" value="1.8953379163930588" />
+      <entry key="S2" value="5.007646877239758" />
+      <entry key="S5" value="6.985824824895873" />
+      <entry key="S10" value="7.912303440797455" />
+      <entry key="S30" value="9.398920738359944" />
+      <entry key="S60" value="11.747231631638623" />
+      <entry key="M2" value="15.777503067025558" />
+      <entry key="M5" value="22.723456631523995" />
+      <entry key="M10" value="27.653029660131853" />
+      <entry key="M15" value="30.122513490896846" />
+      <entry key="M30" value="33.46445170033894" />
+      <entry key="H1" value="37.881119625549346" />
+      <entry key="H2" value="57.62167810682257" />
+      <entry key="H4" value="118.03242608576858" />
+      <entry key="D1" value="423.9001126814891" />
+      <entry key="W1" value="579.2535719488023" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -108,32 +114,32 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "TestNG.DeferredLinkTest.executor": "Run",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/ankitaloni/Desktop/ChottulinkClient-DeferredLink/apps",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;TestNG.DeferredLinkTest.executor&quot;: &quot;Run&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/ankitaloni/Desktop/ChottulinkClient-DeferredLink/apps&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/apps" />
@@ -203,7 +209,15 @@
       <option name="project" value="LOCAL" />
       <updated>1784214331327</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="refractor - Update the Jenkinsfile">
+      <option name="closed" value="true" />
+      <created>1784215155328</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1784215155328</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -227,6 +241,7 @@
     <MESSAGE value="feat: add initial Appium automation framework with deferred deep link flow&#10;&#10;- Added Maven-based Appium framework&#10;- Configured DriverFactory with Android and iOS support&#10;- Added Appium server management&#10;- Implemented ConfigReader for configuration handling&#10;- Added BaseTest with TestNG lifecycle management&#10;- Implemented WaitUtils for explicit waits&#10;- Added CommandExecutor and DeviceManager utilities&#10;- Added AppInstaller with Android/iOS installer implementations&#10;- Implemented ChromePage and DeferredLinkPage&#10;- Added end-to-end deferred deep link test flow" />
     <MESSAGE value="- Added automatic Appium server startup and shutdown&#10;- Refactored DriverFactory for Android/iOS initialization&#10;- Improved BaseTest lifecycle management&#10;- Implemented Deferred Link test flow&#10;- Added DeferredLinkPage validations&#10;- Updated framework configuration&#10;- Updated Maven dependencies&#10;- Added latest test APK" />
     <MESSAGE value="feat: implement deferred deep link automation framework with CI support&#10;&#10;- Implement complete deferred deep link validation flow&#10;- Automate Chrome launch and deferred link navigation&#10;- Verify Play Store redirection before app installation&#10;- Add APK uninstall and reinstall workflow&#10;- Improve installer framework for Android and iOS&#10;- Add DeferredLinkPage using Page Object Model&#10;- Enhance reusable wait utilities and BasePage methods&#10;- Integrate Extent Reports with custom logging&#10;- Add TestNG listener for reporting&#10;- Add Jenkins pipeline support for CI/CD&#10;- Refactor framework for scalability and maintainability" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: implement deferred deep link automation framework with CI support&#10;&#10;- Implement complete deferred deep link validation flow&#10;- Automate Chrome launch and deferred link navigation&#10;- Verify Play Store redirection before app installation&#10;- Add APK uninstall and reinstall workflow&#10;- Improve installer framework for Android and iOS&#10;- Add DeferredLinkPage using Page Object Model&#10;- Enhance reusable wait utilities and BasePage methods&#10;- Integrate Extent Reports with custom logging&#10;- Add TestNG listener for reporting&#10;- Add Jenkins pipeline support for CI/CD&#10;- Refactor framework for scalability and maintainability" />
+    <MESSAGE value="refractor - Update the Jenkinsfile" />
+    <option name="LAST_COMMIT_MESSAGE" value="refractor - Update the Jenkinsfile" />
   </component>
 </project>

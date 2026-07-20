@@ -51,25 +51,22 @@ public class AndroidInstaller implements AppInstaller {
     @Override
     public void uninstall() {
 
-        CommandExecutor.execute(
+        String packageName = ConfigReader.get("android.appPackage");
 
-                List.of(
+        if (!isAppInstalled(packageName)) {
+            System.out.println("App is not installed. Skipping uninstall.");
+            return;
+        }
 
-                        "adb",
-
-                        "-s",
-
-                        DeviceManager.getAndroidDeviceId(),
-
-                        "uninstall",
-
-                        ConfigReader.get("android.appPackage")
-
-                )
-
-        );
+        CommandExecutor.execute(List.of("adb", "-s", DeviceManager.getAndroidDeviceId(), "uninstall", packageName));
 
         System.out.println("Android App Uninstalled Successfully.");
+    }
 
+    public boolean isAppInstalled(String packageName) {
+
+        String output = CommandExecutor.executeAndGetOutput(List.of("adb", "-s", DeviceManager.getAndroidDeviceId(), "shell", "pm", "list", "packages", packageName));
+
+        return output.contains(packageName);
     }
 }
