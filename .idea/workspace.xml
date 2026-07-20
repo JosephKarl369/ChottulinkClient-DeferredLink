@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0d56689d-6eef-4453-a1b9-fec9175100aa" name="Changes" comment="feat : JsonReport for terminal Output &#10;+Validation Report to check the terminal Output Assertions&#10;&#10;Refractor: DeferredLinkTest.java Assertions&#10;config.properties node/appium path change for testing" />
+    <list default="true" id="0d56689d-6eef-4453-a1b9-fec9175100aa" name="Changes" comment="refractor: config.properties update for simulation test">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Jenkinsfile" beforeDir="false" afterPath="$PROJECT_DIR$/Jenkinsfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/ChromePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/ChromePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/reports/JsonConsoleReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/reports/JsonConsoleReport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config.properties" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,61 +44,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.000597013291042" />
-      <entry key="MS500" value="1.2671594518293627" />
-      <entry key="S2" value="3.025423167798878" />
-      <entry key="S5" value="5.861224606340737" />
-      <entry key="S10" value="9.300295346843903" />
-      <entry key="S30" value="19.044091814868004" />
-      <entry key="S60" value="28.251090561551525" />
-      <entry key="M2" value="36.89293545584385" />
-      <entry key="M5" value="44.48321930441082" />
-      <entry key="M10" value="47.68879484934591" />
-      <entry key="M15" value="49.45519354502207" />
-      <entry key="M30" value="55.12972474582043" />
-      <entry key="H1" value="65.21469542129782" />
-      <entry key="H2" value="84.62699344399796" />
-      <entry key="H4" value="131.69991413169228" />
-      <entry key="D1" value="373.46723442819" />
-      <entry key="W1" value="501.62479517483246" />
+      <entry key="MS100" value="1.781183741032486E-191" />
+      <entry key="MS500" value="9.387844526646993E-39" />
+      <entry key="S2" value="6.789203174780826E-10" />
+      <entry key="S5" value="5.241309550297872E-4" />
+      <entry key="S10" value="0.05048301037260895" />
+      <entry key="S30" value="1.0772612990323585" />
+      <entry key="S60" value="2.319919869562593" />
+      <entry key="M2" value="3.405492705425249" />
+      <entry key="M5" value="4.323537329590579" />
+      <entry key="M10" value="5.262339903179868" />
+      <entry key="M15" value="7.037075096894244" />
+      <entry key="M30" value="17.09509625401661" />
+      <entry key="H1" value="39.354111025994385" />
+      <entry key="H2" value="72.45029456121499" />
+      <entry key="H4" value="127.76005866879115" />
+      <entry key="D1" value="388.2982529702666" />
+      <entry key="W1" value="530.3144287534302" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="1.6242468885339768E-31" />
-      <entry key="MS500" value="6.952330492347868E-7" />
-      <entry key="S2" value="0.029017687815910305" />
-      <entry key="S5" value="0.27112206161662655" />
-      <entry key="S10" value="0.6629544269998908" />
-      <entry key="S30" value="1.4361324078043975" />
-      <entry key="S60" value="1.9372068224761247" />
-      <entry key="M2" value="2.3570448547041365" />
-      <entry key="M5" value="2.7075743399945886" />
-      <entry key="M10" value="2.849748896610913" />
-      <entry key="M15" value="2.9160319745459415" />
-      <entry key="M30" value="3.0880386108825766" />
-      <entry key="H1" value="3.4540149511781806" />
-      <entry key="H2" value="5.670749336439055" />
-      <entry key="H4" value="16.22743996819291" />
-      <entry key="D1" value="88.68556330783635" />
-      <entry key="W1" value="128.50618410337344" />
+      <entry key="MS100" value="1.0000000005312095" />
+      <entry key="MS500" value="1.0139653931618249" />
+      <entry key="S2" value="1.3437662935685273" />
+      <entry key="S5" value="1.6523870275296098" />
+      <entry key="S10" value="1.8077047898394623" />
+      <entry key="S30" value="1.9312884556870134" />
+      <entry key="S60" value="1.9650328780342219" />
+      <entry key="M2" value="1.9823608695558042" />
+      <entry key="M5" value="1.9929198766277905" />
+      <entry key="M10" value="2.0035797272118465" />
+      <entry key="M15" value="2.0564529929867197" />
+      <entry key="M30" value="2.49842440956881" />
+      <entry key="H1" value="3.553996943234135" />
+      <entry key="H2" value="5.931350918327099" />
+      <entry key="H4" value="15.206812858282518" />
+      <entry key="D1" value="87.78946485144643" />
+      <entry key="W1" value="130.68693566566824" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.9732356353432182" />
-      <entry key="MS500" value="1.260131611198665" />
-      <entry key="S2" value="3.041898510758842" />
-      <entry key="S5" value="6.082809527133497" />
-      <entry key="S10" value="9.888659073548004" />
-      <entry key="S30" value="20.412813806983674" />
-      <entry key="S60" value="30.138714169305317" />
-      <entry key="M2" value="39.21826993161788" />
-      <entry key="M5" value="47.17575856619322" />
-      <entry key="M10" value="50.530508873518656" />
-      <entry key="M15" value="52.36557619931027" />
-      <entry key="M30" value="58.214256872739305" />
-      <entry key="H1" value="68.66626483604595" />
-      <entry key="H2" value="90.29553415228305" />
-      <entry key="H4" value="147.92415425848532" />
-      <entry key="D1" value="462.14952003164626" />
-      <entry key="W1" value="630.1302852151057" />
+      <entry key="MS100" value="0.00121907280166173" />
+      <entry key="MS500" value="0.2614407005332993" />
+      <entry key="S2" value="0.8151609382089139" />
+      <entry key="S5" value="1.2732925404776385" />
+      <entry key="S10" value="1.6153004670033042" />
+      <entry key="S30" value="2.9019886982895144" />
+      <entry key="S60" value="4.223020144308262" />
+      <entry key="M2" value="5.353463693819681" />
+      <entry key="M5" value="6.301627480935374" />
+      <entry key="M10" value="7.258266194889861" />
+      <entry key="M15" value="9.088243896362483" />
+      <entry key="M30" value="19.590272652789356" />
+      <entry key="H1" value="42.905652264289785" />
+      <entry key="H2" value="78.37944593264858" />
+      <entry key="H4" value="142.96393447629956" />
+      <entry key="D1" value="476.08449565933876" />
+      <entry key="W1" value="661.0006621669584" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -216,7 +222,15 @@
       <option name="project" value="LOCAL" />
       <updated>1784544897843</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="refractor: config.properties update for simulation test">
+      <option name="closed" value="true" />
+      <created>1784545225703</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1784545225703</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -242,6 +256,7 @@
     <MESSAGE value="feat: implement deferred deep link automation framework with CI support&#10;&#10;- Implement complete deferred deep link validation flow&#10;- Automate Chrome launch and deferred link navigation&#10;- Verify Play Store redirection before app installation&#10;- Add APK uninstall and reinstall workflow&#10;- Improve installer framework for Android and iOS&#10;- Add DeferredLinkPage using Page Object Model&#10;- Enhance reusable wait utilities and BasePage methods&#10;- Integrate Extent Reports with custom logging&#10;- Add TestNG listener for reporting&#10;- Add Jenkins pipeline support for CI/CD&#10;- Refactor framework for scalability and maintainability" />
     <MESSAGE value="refractor - Update the Jenkinsfile" />
     <MESSAGE value="feat : JsonReport for terminal Output &#10;+Validation Report to check the terminal Output Assertions&#10;&#10;Refractor: DeferredLinkTest.java Assertions&#10;config.properties node/appium path change for testing" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat : JsonReport for terminal Output &#10;+Validation Report to check the terminal Output Assertions&#10;&#10;Refractor: DeferredLinkTest.java Assertions&#10;config.properties node/appium path change for testing" />
+    <MESSAGE value="refractor: config.properties update for simulation test" />
+    <option name="LAST_COMMIT_MESSAGE" value="refractor: config.properties update for simulation test" />
   </component>
 </project>

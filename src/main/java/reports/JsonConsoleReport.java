@@ -3,6 +3,9 @@ package reports;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -36,14 +39,22 @@ public final class JsonConsoleReport {
         try {
 
             ObjectMapper mapper = new ObjectMapper();
-
             mapper.enable(SerializationFeature.INDENT_OUTPUT);
 
+            String json = mapper.writeValueAsString(report);
+
+            // Print in console
             System.out.println();
             System.out.println("========== JSON REPORT ==========");
             System.out.println(mapper.writeValueAsString(report));
             System.out.println("=================================");
             System.out.println();
+
+            // Save to file
+            Path reportPath = Paths.get("target", "json-report.json");
+            Files.createDirectories(reportPath.getParent());
+            Files.writeString(reportPath, json);
+
 
         } catch (Exception e) {
 

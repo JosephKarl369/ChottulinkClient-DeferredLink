@@ -26,6 +26,11 @@ pipeline {
 
     post {
         always {
+
+            // Archive JSON Report
+            archiveArtifacts artifacts: 'target/json-report.json', fingerprint: true
+
+            // Publish Extent HTML Report
             publishHTML([
                 allowMissing: false,
                 alwaysLinkToLastBuild: true,

@@ -26,6 +26,8 @@ public class ChromePage extends BasePage {
 
     private final By negativeButton = AppiumBy.id("com.android.chrome:id/negative_button");
 
+    private final By gotItButton = AppiumBy.id("com.android.chrome:id/got_it");
+
 
     /**
      * Handles Chrome first launch screens.
@@ -35,6 +37,8 @@ public class ChromePage extends BasePage {
         clickIfPresent(dismissSignInButton);
 
         clickIfPresent(negativeButton);
+
+        clickIfPresent(gotItButton);
 
     }
 
