@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0d56689d-6eef-4453-a1b9-fec9175100aa" name="Changes" comment="refractor: config.properties update for simulation test">
+    <list default="true" id="0d56689d-6eef-4453-a1b9-fec9175100aa" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Jenkinsfile" beforeDir="false" afterPath="$PROJECT_DIR$/Jenkinsfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pages/ChromePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/ChromePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/reports/JsonConsoleReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/reports/JsonConsoleReport.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -44,61 +42,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.781183741032486E-191" />
-      <entry key="MS500" value="9.387844526646993E-39" />
-      <entry key="S2" value="6.789203174780826E-10" />
-      <entry key="S5" value="5.241309550297872E-4" />
-      <entry key="S10" value="0.05048301037260895" />
-      <entry key="S30" value="1.0772612990323585" />
-      <entry key="S60" value="2.319919869562593" />
-      <entry key="M2" value="3.405492705425249" />
-      <entry key="M5" value="4.323537329590579" />
-      <entry key="M10" value="5.262339903179868" />
-      <entry key="M15" value="7.037075096894244" />
-      <entry key="M30" value="17.09509625401661" />
-      <entry key="H1" value="39.354111025994385" />
-      <entry key="H2" value="72.45029456121499" />
-      <entry key="H4" value="127.76005866879115" />
-      <entry key="D1" value="388.2982529702666" />
-      <entry key="W1" value="530.3144287534302" />
+      <entry key="MS100" value="1.2952481653573826" />
+      <entry key="MS500" value="1.783579136024665" />
+      <entry key="S2" value="2.10490516351159" />
+      <entry key="S5" value="2.8789197735239966" />
+      <entry key="S10" value="3.9600424130399867" />
+      <entry key="S30" value="7.543215584468895" />
+      <entry key="S60" value="11.616905941931252" />
+      <entry key="M2" value="17.35494752861192" />
+      <entry key="M5" value="32.119676404104545" />
+      <entry key="M10" value="48.826232913260185" />
+      <entry key="M15" value="58.897517705692685" />
+      <entry key="M30" value="78.48955987893764" />
+      <entry key="H1" value="106.25453389511208" />
+      <entry key="H2" value="143.35748694994464" />
+      <entry key="H4" value="201.24825391799564" />
+      <entry key="D1" value="466.134960070301" />
+      <entry key="W1" value="610.7135437973534" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="1.0000000005312095" />
-      <entry key="MS500" value="1.0139653931618249" />
-      <entry key="S2" value="1.3437662935685273" />
-      <entry key="S5" value="1.6523870275296098" />
-      <entry key="S10" value="1.8077047898394623" />
-      <entry key="S30" value="1.9312884556870134" />
-      <entry key="S60" value="1.9650328780342219" />
-      <entry key="M2" value="1.9823608695558042" />
-      <entry key="M5" value="1.9929198766277905" />
-      <entry key="M10" value="2.0035797272118465" />
-      <entry key="M15" value="2.0564529929867197" />
-      <entry key="M30" value="2.49842440956881" />
-      <entry key="H1" value="3.553996943234135" />
-      <entry key="H2" value="5.931350918327099" />
-      <entry key="H4" value="15.206812858282518" />
-      <entry key="D1" value="87.78946485144643" />
-      <entry key="W1" value="130.68693566566824" />
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="2.642250288296328E-88" />
+      <entry key="S2" value="2.11384443125802E-22" />
+      <entry key="S5" value="4.7141540809452746E-9" />
+      <entry key="S10" value="1.5336038037259687E-4" />
+      <entry key="S30" value="0.19432399059249647" />
+      <entry key="S60" value="1.3826435615837647" />
+      <entry key="M2" value="4.3167407061955325" />
+      <entry key="M5" value="10.17273367836894" />
+      <entry key="M10" value="14.51673903985858" />
+      <entry key="M15" value="16.57362185846129" />
+      <entry key="M30" value="19.351916398480295" />
+      <entry key="H1" value="21.728166353404895" />
+      <entry key="H2" value="24.793646085926294" />
+      <entry key="H4" value="34.23268764381742" />
+      <entry key="D1" value="107.098213055872" />
+      <entry key="W1" value="150.54330382908984" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.00121907280166173" />
-      <entry key="MS500" value="0.2614407005332993" />
-      <entry key="S2" value="0.8151609382089139" />
-      <entry key="S5" value="1.2732925404776385" />
-      <entry key="S10" value="1.6153004670033042" />
-      <entry key="S30" value="2.9019886982895144" />
-      <entry key="S60" value="4.223020144308262" />
-      <entry key="M2" value="5.353463693819681" />
-      <entry key="M5" value="6.301627480935374" />
-      <entry key="M10" value="7.258266194889861" />
-      <entry key="M15" value="9.088243896362483" />
-      <entry key="M30" value="19.590272652789356" />
-      <entry key="H1" value="42.905652264289785" />
-      <entry key="H2" value="78.37944593264858" />
-      <entry key="H4" value="142.96393447629956" />
-      <entry key="D1" value="476.08449565933876" />
-      <entry key="W1" value="661.0006621669584" />
+      <entry key="MS100" value="0.31864149621282234" />
+      <entry key="MS500" value="0.862499359862329" />
+      <entry key="S2" value="1.6103046613897496" />
+      <entry key="S5" value="2.6262049070260205" />
+      <entry key="S10" value="3.789886235691329" />
+      <entry key="S30" value="7.582230890690706" />
+      <entry key="S60" value="12.853123903003988" />
+      <entry key="M2" value="21.534823632398016" />
+      <entry key="M5" value="42.17830305685111" />
+      <entry key="M10" value="63.260910991186854" />
+      <entry key="M15" value="75.40825426703492" />
+      <entry key="M30" value="97.80461923797164" />
+      <entry key="H1" value="127.96207266547258" />
+      <entry key="H2" value="168.1394896659935" />
+      <entry key="H4" value="235.47322659207728" />
+      <entry key="D1" value="573.2291443713457" />
+      <entry key="W1" value="761.2560272227585" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -230,7 +228,15 @@
       <option name="project" value="LOCAL" />
       <updated>1784545225703</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="feat : added JsonReport.json to Project&#10;+ added got it privacy button handle">
+      <option name="closed" value="true" />
+      <created>1784550576188</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1784550576188</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -257,6 +263,7 @@
     <MESSAGE value="refractor - Update the Jenkinsfile" />
     <MESSAGE value="feat : JsonReport for terminal Output &#10;+Validation Report to check the terminal Output Assertions&#10;&#10;Refractor: DeferredLinkTest.java Assertions&#10;config.properties node/appium path change for testing" />
     <MESSAGE value="refractor: config.properties update for simulation test" />
-    <option name="LAST_COMMIT_MESSAGE" value="refractor: config.properties update for simulation test" />
+    <MESSAGE value="feat : added JsonReport.json to Project&#10;+ added got it privacy button handle" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat : added JsonReport.json to Project&#10;+ added got it privacy button handle" />
   </component>
 </project>

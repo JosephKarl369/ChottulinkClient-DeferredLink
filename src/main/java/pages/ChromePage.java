@@ -26,7 +26,9 @@ public class ChromePage extends BasePage {
 
     private final By negativeButton = AppiumBy.id("com.android.chrome:id/negative_button");
 
-    private final By gotItButton = AppiumBy.id("com.android.chrome:id/got_it");
+    private final By gotItButton = AppiumBy.id("com.android.chrome:id/ack_button");
+
+    private final By notFoundPage = AppiumBy.id("android.widget.TextView");
 
 
     /**
