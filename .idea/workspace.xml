@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0d56689d-6eef-4453-a1b9-fec9175100aa" name="Changes" comment="">
+    <list default="true" id="0d56689d-6eef-4453-a1b9-fec9175100aa" name="Changes" comment="refractor : updated the Chrome Policy GotIt Locator">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/BasePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pages/ChromePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/ChromePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config.properties" afterDir="false" />
     </list>
@@ -42,61 +43,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.2952481653573826" />
-      <entry key="MS500" value="1.783579136024665" />
-      <entry key="S2" value="2.10490516351159" />
-      <entry key="S5" value="2.8789197735239966" />
-      <entry key="S10" value="3.9600424130399867" />
-      <entry key="S30" value="7.543215584468895" />
-      <entry key="S60" value="11.616905941931252" />
-      <entry key="M2" value="17.35494752861192" />
-      <entry key="M5" value="32.119676404104545" />
-      <entry key="M10" value="48.826232913260185" />
-      <entry key="M15" value="58.897517705692685" />
-      <entry key="M30" value="78.48955987893764" />
-      <entry key="H1" value="106.25453389511208" />
-      <entry key="H2" value="143.35748694994464" />
-      <entry key="H4" value="201.24825391799564" />
-      <entry key="D1" value="466.134960070301" />
-      <entry key="W1" value="610.7135437973534" />
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0000015199517238" />
+      <entry key="S2" value="1.0768717288873393" />
+      <entry key="S5" value="2.217945890257193" />
+      <entry key="S10" value="4.899698988499845" />
+      <entry key="S30" value="10.670944544430574" />
+      <entry key="S60" value="13.38493148006381" />
+      <entry key="M2" value="15.06280445854226" />
+      <entry key="M5" value="16.45745593620523" />
+      <entry key="M10" value="18.910008642958985" />
+      <entry key="M15" value="22.186261618833218" />
+      <entry key="M30" value="32.51436614103387" />
+      <entry key="H1" value="56.49309317709472" />
+      <entry key="H2" value="106.9283963987822" />
+      <entry key="H4" value="187.35489163022737" />
+      <entry key="D1" value="510.8439269835351" />
+      <entry key="W1" value="691.2609165732305" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="2.642250288296328E-88" />
-      <entry key="S2" value="2.11384443125802E-22" />
-      <entry key="S5" value="4.7141540809452746E-9" />
-      <entry key="S10" value="1.5336038037259687E-4" />
-      <entry key="S30" value="0.19432399059249647" />
-      <entry key="S60" value="1.3826435615837647" />
-      <entry key="M2" value="4.3167407061955325" />
-      <entry key="M5" value="10.17273367836894" />
-      <entry key="M10" value="14.51673903985858" />
-      <entry key="M15" value="16.57362185846129" />
-      <entry key="M30" value="19.351916398480295" />
-      <entry key="H1" value="21.728166353404895" />
-      <entry key="H2" value="24.793646085926294" />
-      <entry key="H4" value="34.23268764381742" />
-      <entry key="D1" value="107.098213055872" />
-      <entry key="W1" value="150.54330382908984" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="1.2261728385445674E-181" />
+      <entry key="S5" value="6.154929987951762E-73" />
+      <entry key="S10" value="1.0976932378944211E-36" />
+      <entry key="S30" value="1.7302775620264138E-12" />
+      <entry key="S60" value="2.1233933694442297E-6" />
+      <entry key="M2" value="0.002594681273692276" />
+      <entry key="M5" value="0.2515457776853964" />
+      <entry key="M10" value="1.4509061552126095" />
+      <entry key="M15" value="2.7914622518543943" />
+      <entry key="M30" value="5.968163859381195" />
+      <entry key="H1" value="10.917863227990418" />
+      <entry key="H2" value="18.736171381356783" />
+      <entry key="H4" value="31.418685282512154" />
+      <entry key="D1" value="110.4907442196395" />
+      <entry key="W1" value="161.55275854037913" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.31864149621282234" />
-      <entry key="MS500" value="0.862499359862329" />
-      <entry key="S2" value="1.6103046613897496" />
-      <entry key="S5" value="2.6262049070260205" />
-      <entry key="S10" value="3.789886235691329" />
-      <entry key="S30" value="7.582230890690706" />
-      <entry key="S60" value="12.853123903003988" />
-      <entry key="M2" value="21.534823632398016" />
-      <entry key="M5" value="42.17830305685111" />
-      <entry key="M10" value="63.260910991186854" />
-      <entry key="M15" value="75.40825426703492" />
-      <entry key="M30" value="97.80461923797164" />
-      <entry key="H1" value="127.96207266547258" />
-      <entry key="H2" value="168.1394896659935" />
-      <entry key="H4" value="235.47322659207728" />
-      <entry key="D1" value="573.2291443713457" />
-      <entry key="W1" value="761.2560272227585" />
+      <entry key="MS100" value="0.9526379980439373" />
+      <entry key="MS500" value="0.9903443834846617" />
+      <entry key="S2" value="1.0743434108312895" />
+      <entry key="S5" value="2.216294721383068" />
+      <entry key="S10" value="4.898060690761341" />
+      <entry key="S30" value="10.669744743282232" />
+      <entry key="S60" value="13.384168380933117" />
+      <entry key="M2" value="15.064889643792183" />
+      <entry key="M5" value="16.705971460764875" />
+      <entry key="M10" value="20.352658850156445" />
+      <entry key="M15" value="24.96700142724863" />
+      <entry key="M30" value="38.47054366937629" />
+      <entry key="H1" value="67.39971012140435" />
+      <entry key="H2" value="125.65499032014681" />
+      <entry key="H4" value="218.76588763935453" />
+      <entry key="D1" value="621.3303927222239" />
+      <entry key="W1" value="852.8127776512408" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -236,7 +237,15 @@
       <option name="project" value="LOCAL" />
       <updated>1784550576188</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="refractor : updated the Chrome Policy GotIt Locator">
+      <option name="closed" value="true" />
+      <created>1784556724467</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1784556724467</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -264,6 +273,7 @@
     <MESSAGE value="feat : JsonReport for terminal Output &#10;+Validation Report to check the terminal Output Assertions&#10;&#10;Refractor: DeferredLinkTest.java Assertions&#10;config.properties node/appium path change for testing" />
     <MESSAGE value="refractor: config.properties update for simulation test" />
     <MESSAGE value="feat : added JsonReport.json to Project&#10;+ added got it privacy button handle" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat : added JsonReport.json to Project&#10;+ added got it privacy button handle" />
+    <MESSAGE value="refractor : updated the Chrome Policy GotIt Locator" />
+    <option name="LAST_COMMIT_MESSAGE" value="refractor : updated the Chrome Policy GotIt Locator" />
   </component>
 </project>

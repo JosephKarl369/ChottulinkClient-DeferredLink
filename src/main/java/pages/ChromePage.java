@@ -36,12 +36,17 @@ public class ChromePage extends BasePage {
      */
     public void handleChromeConfiguration() {
 
+        // Always first
         clickIfPresent(dismissSignInButton);
 
-        clickIfPresent(negativeButton);
+        // These can appear in any order
+        if (isElementPresent(negativeButton)) {
+            clickIfPresent(negativeButton);
+        }
 
-        clickIfPresent(gotItButton);
-
+        if (isElementPresent(gotItButton)) {
+            clickIfPresent(gotItButton);
+        }
     }
 
     /**
@@ -136,6 +141,37 @@ public class ChromePage extends BasePage {
 
         }
 
+    }
+
+    public boolean isElementPresent(By locator) {
+        try {
+            return isDisplayed(locator);
+        } catch (Exception ignored) {
+            return false;
+        }
+    }
+
+
+    public boolean isPageNotFound() {
+
+        try {
+            return !DriverFactory.getDriver().findElements(notFoundPage).isEmpty();
+
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    public void LinkPageAndValidate() {
+
+        WaitUtils.waitForVisibility(notFoundPage);
+
+        if (isPageNotFound()) {
+
+            pressHome();
+
+            throw new RuntimeException("404 Page Not Found");
+        }
     }
 
 }
