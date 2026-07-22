@@ -1,10 +1,10 @@
 package tests;
 
 import driver.DriverFactory;
+import execution.ExecutionManager;
 import listeners.TestListener;
 import org.testng.annotations.*;
 import server.AppiumServiceManager;
-import utils.DeviceManager;
 
 @Listeners(TestListener.class)
 public class BaseTest {
@@ -12,11 +12,7 @@ public class BaseTest {
     @BeforeSuite(alwaysRun = true)
     public void beforeSuite() {
 
-        if (!DeviceManager.isDeviceConnected()) {
-            throw new RuntimeException("No Android/iOS device connected.");
-        }
-
-        AppiumServiceManager.startAppiumServer();
+        ExecutionManager.getStrategy().beforeSuite();
 
     }
 
@@ -24,26 +20,25 @@ public class BaseTest {
     @Parameters("platform")
     public void beforeMethod(@Optional("Android") String platform) {
 
-        // Command line value overrides XML value
         String runPlatform = System.getProperty("platform", platform);
 
         System.setProperty("platform", runPlatform);
 
-        DriverFactory.initializeDriver();
+        ExecutionManager.getStrategy().beforeMethod();
 
     }
 
     @AfterMethod(alwaysRun = true)
     public void afterMethod() {
 
-        DriverFactory.quitDriver();
+        ExecutionManager.getStrategy().afterMethod();
 
     }
 
     @AfterSuite(alwaysRun = true)
     public void afterSuite() {
 
-        AppiumServiceManager.stopAppiumServer();
+        ExecutionManager.getStrategy().afterSuite();
 
     }
 }

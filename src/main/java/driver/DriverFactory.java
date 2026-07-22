@@ -8,6 +8,9 @@ import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.ios.options.XCUITestOptions;
 import server.AppiumServiceManager;
 
+import java.net.MalformedURLException;
+import java.net.URL;
+
 public final class DriverFactory {
 
     private static final ThreadLocal<AppiumDriver> driver = new ThreadLocal<>();
@@ -46,7 +49,7 @@ public final class DriverFactory {
 
                 driver.set(
                         new AndroidDriver(
-                                AppiumServiceManager.getAppiumServerUrl(),
+                                getServerUrl(),
                                 androidOptions
                         )
                 );
@@ -74,7 +77,7 @@ public final class DriverFactory {
 
                 driver.set(
                         new IOSDriver(
-                                AppiumServiceManager.getAppiumServerUrl(),
+                                getServerUrl(),
                                 iosOptions
                         )
                 );
@@ -92,6 +95,28 @@ public final class DriverFactory {
 
     public static AppiumDriver getDriver() {
         return driver.get();
+    }
+
+    private static URL getServerUrl() {
+
+        try {
+
+            String execution = ConfigReader.get("execution");
+
+            if ("aws".equalsIgnoreCase(execution)) {
+
+                return new URL("http://127.0.0.1:4723/wd/hub");
+
+            }
+
+            return AppiumServiceManager.getAppiumServerUrl();
+
+        } catch (MalformedURLException e) {
+
+            throw new RuntimeException("Invalid Appium Server URL", e);
+
+        }
+
     }
 
     public static void quitDriver() {
