@@ -39,6 +39,11 @@ public final class AppiumServiceManager {
 
     public static void startAppiumServer() {
 
+        if (isAwsExecution()) {
+            System.out.println("AWS Execution detected. Skipping local Appium Server startup.");
+            return;
+        }
+
         if (service == null || !service.isRunning()) {
 
             validateEnvironment();
@@ -51,8 +56,11 @@ public final class AppiumServiceManager {
         }
     }
 
-
     public static void stopAppiumServer() {
+
+        if (isAwsExecution()) {
+            return;
+        }
 
         if (service != null && service.isRunning()) {
             service.stop();
@@ -61,10 +69,25 @@ public final class AppiumServiceManager {
 
     public static URL getAppiumServerUrl() {
 
-        if (service == null) {
-            throw new RuntimeException("Appium Server is not started.");
+        try {
+
+            if (isAwsExecution()) {
+                return new URL(ConfigReader.get("aws.appium.url"));
+            }
+
+            if (service == null) {
+                throw new RuntimeException("Appium Server is not started.");
+            }
+
+            return service.getUrl();
+
+        } catch (Exception e) {
+            throw new RuntimeException(e);
         }
 
-        return service.getUrl();
+    }
+
+    private static boolean isAwsExecution() {
+        return "aws".equalsIgnoreCase(ConfigReader.get("execution"));
     }
 }
