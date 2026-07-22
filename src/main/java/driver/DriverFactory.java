@@ -20,10 +20,9 @@ public final class DriverFactory {
 
     public static void initializeDriver() {
 
-        String platform = System.getProperty(
-                "platform",
-                ConfigReader.get("platform")
-        );
+        String platform = System.getProperty("platform", ConfigReader.get("platform"));
+        String execution = System.getProperty("execution", ConfigReader.get("execution"));
+
 
         switch (platform.toLowerCase()) {
 
@@ -31,28 +30,27 @@ public final class DriverFactory {
 
                 UiAutomator2Options androidOptions = new UiAutomator2Options();
 
-                androidOptions.setPlatformName(
-                        ConfigReader.get("android.platformName"));
+                if ("aws".equalsIgnoreCase(execution)) {
 
-                androidOptions.setDeviceName(
-                        ConfigReader.get("android.deviceName"));
+                    // AWS Device Farm chooses the device.
+                    androidOptions.setPlatformName("Android");
+                    androidOptions.setAutomationName("UiAutomator2");
+                } else {
 
-                androidOptions.setPlatformVersion(
-                        ConfigReader.get("android.platformVersion"));
+                    androidOptions.setPlatformName(ConfigReader.get("android.platformName"));
 
-                androidOptions.setAutomationName(
-                        ConfigReader.get("android.automationName"));
+                    androidOptions.setDeviceName(ConfigReader.get("android.deviceName"));
+
+                    androidOptions.setPlatformVersion(ConfigReader.get("android.platformVersion"));
+
+                    androidOptions.setAutomationName(ConfigReader.get("android.automationName"));
+                }
 
                 // Launch Chrome
                 androidOptions.setAppPackage("com.android.chrome");
                 androidOptions.setAppActivity("com.google.android.apps.chrome.Main");
 
-                driver.set(
-                        new AndroidDriver(
-                                getServerUrl(),
-                                androidOptions
-                        )
-                );
+                driver.set(new AndroidDriver(getServerUrl(), androidOptions));
 
                 break;
 
@@ -60,35 +58,31 @@ public final class DriverFactory {
 
                 XCUITestOptions iosOptions = new XCUITestOptions();
 
-                iosOptions.setPlatformName(
-                        ConfigReader.get("ios.platformName"));
+                if ("aws".equalsIgnoreCase(execution)) {
+                    iosOptions.setPlatformName("iOS");
+                    iosOptions.setAutomationName("XCUITest");
 
-                iosOptions.setDeviceName(
-                        ConfigReader.get("ios.deviceName"));
+                } else {
 
-                iosOptions.setPlatformVersion(
-                        ConfigReader.get("ios.platformVersion"));
+                    iosOptions.setPlatformName(ConfigReader.get("ios.platformName"));
 
-                iosOptions.setAutomationName(
-                        ConfigReader.get("ios.automationName"));
+                    iosOptions.setDeviceName(ConfigReader.get("ios.deviceName"));
+
+                    iosOptions.setPlatformVersion(ConfigReader.get("ios.platformVersion"));
+
+                    iosOptions.setAutomationName(ConfigReader.get("ios.automationName"));
+                }
 
                 // Launch Safari
                 iosOptions.setCapability("browserName", "Safari");
 
-                driver.set(
-                        new IOSDriver(
-                                getServerUrl(),
-                                iosOptions
-                        )
-                );
+                driver.set(new IOSDriver(getServerUrl(), iosOptions));
 
                 break;
 
             default:
 
-                throw new RuntimeException(
-                        "Unsupported Platform : " + platform
-                );
+                throw new RuntimeException("Unsupported Platform : " + platform);
         }
 
     }
@@ -101,11 +95,11 @@ public final class DriverFactory {
 
         try {
 
-            String execution = ConfigReader.get("execution");
+            String execution = System.getProperty("execution", ConfigReader.get("execution"));
 
             if ("aws".equalsIgnoreCase(execution)) {
 
-                return new URL("http://127.0.0.1:4723/wd/hub");
+                return new URL(ConfigReader.get("aws.appium.url"));
 
             }
 
