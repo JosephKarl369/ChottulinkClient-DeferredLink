@@ -1,0 +1,32 @@
+version: 0.1
+
+android_test_host: amazon_linux_2
+
+phases:
+  install:
+    commands:
+      - devicefarm-cli use java 17
+      - devicefarm-cli use appium 2
+
+  pre_test:
+    commands:
+      - echo "===== TEST PACKAGE ====="
+      - ls -R $DEVICEFARM_TEST_PACKAGE_PATH
+
+      - echo "===== CLASSPATH ====="
+      - export CLASSPATH="$DEVICEFARM_TEST_PACKAGE_PATH/*:$DEVICEFARM_TEST_PACKAGE_PATH/dependency-jars/*"
+      - echo $CLASSPATH
+
+      - appium --log $DEVICEFARM_LOG_DIR/appium.log --relaxed-security &
+      - |
+        until curl --silent http://127.0.0.1:4723/status > /dev/null; do
+          sleep 2
+        done
+
+  test:
+    commands:
+      - cd $DEVICEFARM_TEST_PACKAGE_PATH
+      - java -cp "$CLASSPATH" org.testng.TestNG -testjar ChottulinkClient-DeferredLink-1.0.0-tests.jar
+
+artifacts:
+  - $DEVICEFARM_LOG_DIR
