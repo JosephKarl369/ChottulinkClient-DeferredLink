@@ -88,6 +88,12 @@ public final class AppiumServiceManager {
     }
 
     private static boolean isAwsExecution() {
-        return "aws".equalsIgnoreCase(ConfigReader.get("execution"));
+
+        return "aws".equalsIgnoreCase(
+                System.getProperty(
+                        "execution",
+                        ConfigReader.get("execution")
+                )
+        );
     }
 }
