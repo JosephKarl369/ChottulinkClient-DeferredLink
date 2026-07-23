@@ -13,9 +13,10 @@ phases:
       - echo "===== TEST PACKAGE ====="
       - ls -R $DEVICEFARM_TEST_PACKAGE_PATH
 
-      - echo "===== CLASSPATH ====="
       - export CLASSPATH="$DEVICEFARM_TEST_PACKAGE_PATH/*:$DEVICEFARM_TEST_PACKAGE_PATH/dependency-jars/*"
-      - echo $CLASSPATH
+
+      - echo "===== CLASSPATH ====="
+      - echo "$CLASSPATH"
 
       - appium --log $DEVICEFARM_LOG_DIR/appium.log --relaxed-security &
       - |
@@ -26,7 +27,15 @@ phases:
   test:
     commands:
       - cd $DEVICEFARM_TEST_PACKAGE_PATH
-      - java -cp "$CLASSPATH" org.testng.TestNG -testjar ChottulinkClient-DeferredLink-1.0.0-tests.jar
+      - |
+        java \
+          -cp "$CLASSPATH" \
+          -Dexecution=AWS \
+          -Dplatform=Android \
+          org.testng.TestNG \
+          -testjar ChottulinkClient-DeferredLink-1.0.0-tests.jar \
+          -d $DEVICEFARM_LOG_DIR/test-output \
+          -verbose 10
 
 artifacts:
   - $DEVICEFARM_LOG_DIR
