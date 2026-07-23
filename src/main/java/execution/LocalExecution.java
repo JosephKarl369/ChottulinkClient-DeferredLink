@@ -8,11 +8,10 @@ public class LocalExecution implements ExecutionStrategy {
 
     @Override
     public void beforeSuite() {
-
+        System.out.println("***** LOCAL EXECUTION *****");
         if (!DeviceManager.isDeviceConnected()) {
             throw new RuntimeException("No Android/iOS device connected.");
         }
-
         AppiumServiceManager.startAppiumServer();
     }
 

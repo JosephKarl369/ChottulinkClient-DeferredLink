@@ -14,10 +14,14 @@ public final class ExecutionManager {
                     "execution",
                     ConfigReader.get("execution")
             );
+            System.out.println("System execution property = " + System.getProperty("execution"));
+            System.out.println("Config execution property = " + ConfigReader.get("execution"));
+            System.out.println("Resolved execution = " + execution);
 
             ExecutionMode mode = ExecutionMode.valueOf(
                     execution.trim().toUpperCase()
             );
+            System.out.println("Execution Mode = " + mode);
 
             switch (mode) {
 

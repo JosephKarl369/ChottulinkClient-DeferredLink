@@ -7,6 +7,7 @@ public class AwsExecution implements ExecutionStrategy {
     @Override
     public void beforeSuite() {
         // AWS Device Farm provides the device and Appium server.
+        System.out.println("***** AWS EXECUTION *****");
     }
 
     @Override

@@ -50,6 +50,10 @@ public final class DriverFactory {
                 androidOptions.setAppPackage("com.android.chrome");
                 androidOptions.setAppActivity("com.google.android.apps.chrome.Main");
 
+                System.out.println("Execution = " + execution);
+                System.out.println("Server URL = " + getServerUrl());
+                System.out.println("Capabilities = " + androidOptions.asMap());
+
                 driver.set(new AndroidDriver(getServerUrl(), androidOptions));
 
                 break;
